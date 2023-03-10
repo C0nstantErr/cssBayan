@@ -1,9 +1,111 @@
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: inherit;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1E1E1E;
+}
 
+.accordion {
+  width: 80%;
+}
+
+.accordion__container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.accordion__title {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgb(226,226,226); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.item__top {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.item__title {
+  width: 80%;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.item__icon {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid #C7C7C7;
+  transition: transform 0.2s ease;
+}
+
+.plus-icon {
+  width: 100%;
+}
+
+.item__img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 0;
+  /* height: 30vh; */
+  overflow: hidden;
+}
+
+.item__img img {
+  height: 80%;
+  transition: height 0.2s ease;
+}
+
+/* .item__img img:hover {
+  height: 100%;
+} */
+
+.accordion__meme {
+  display: none;
+}
+
+.accordion__meme:checked + label .item__img {
+  height: 30vh;
+}
+
+.accordion__meme:checked + label .item__img img {
+  height: 100%;
+}
+.accordion__meme:checked + label .item__icon {
+  transform: rotate(135deg);
+  border-color: #ffff88e6;
+}
+
+.accordion__meme:checked + label .item__title {
+  color: #ffff88e6;
+}
