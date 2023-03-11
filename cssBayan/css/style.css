@@ -218,3 +218,74 @@ html {
 .accordion__meme:checked + label .item__title {
   color: rgb(255, 255, 136);
 }
+
+@keyframes changeColorTitle {
+  from {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  to {
+    color: rgb(255, 255, 136);
+  }
+}
+
+@keyframes changeIconSize {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(180deg)
+  }
+}
+
+@keyframes dropShadowImg {
+  from {
+    filter: drop-shadow(0);
+  }
+  to {
+    filter: drop-shadow(0 -5px 4px #ffffff25)
+  }
+}
+
+@media (min-width: 1024px) {
+  .accordion__meme:not(:checked) + label .item:hover .item__title {
+    animation-name: changeColorTitle;
+    animation-delay: 1.5s;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .accordion__meme:not(:checked) + label .item:hover .item__icon img{
+    animation-name: changeIconSize;
+    animation-delay: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .accordion__meme:not(:checked) + label .item:hover .item__icon {
+    animation-name: rotateIcon;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+
+  .accordion__meme:not(:checked) + label .item:hover .item__img img {
+    animation-name: dropShadowImg;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
