@@ -18,11 +18,21 @@ html {
 .accordion {
   width: 80%;
 }
+@media (min-width: 768px) {
+  .accordion {
+    width: 60%;
+  }
+}
 
 .accordion__container {
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
+}
+@media (min-width: 768px) {
+  .accordion__container {
+    padding-top: 4rem;
+  }
 }
 
 .accordion__title {
@@ -40,6 +50,12 @@ html {
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.1);
 }
+@media (min-width: 768px) {
+  .accordion__title {
+    margin-bottom: 3rem;
+    font-size: 3.4rem;
+  }
+}
 
 .item__top {
   display: flex;
@@ -47,6 +63,12 @@ html {
   column-gap: 2rem;
   margin-bottom: 1.5rem;
 }
+@media (min-width: 768px) {
+  .item__top {
+    margin-bottom: 2rem;
+  }
+}
+
 
 .item__title {
   width: 80%;
@@ -55,6 +77,11 @@ html {
   font-weight: 400;
   color: #ffffff;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .item__title {
+    font-size: 2.4rem;
+  }
 }
 
 .item__icon {
@@ -66,6 +93,13 @@ html {
   border-radius: 50%;
   border: 0.2rem solid #C7C7C7;
   transition: transform 0.2s ease;
+}
+@media (min-width: 768px) {
+  .item__icon {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+  }
 }
 
 .plus-icon {
@@ -97,10 +131,16 @@ html {
 .accordion__meme:checked + label .item__img {
   height: 30vh;
 }
+@media (min-width: 768px) {
+  .accordion__meme:checked + label .item__img {
+    height: 35vh;
+  }
+}
 
 .accordion__meme:checked + label .item__img img {
   height: 100%;
 }
+
 .accordion__meme:checked + label .item__icon {
   transform: rotate(135deg);
   border-color: #ffff88e6;
